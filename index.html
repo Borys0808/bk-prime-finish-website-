@@ -455,7 +455,7 @@
       email: "bkprimefinish@gmail.com",
       address: "12628 SE 211th St, Kent, WA 98031",
       hours: "Mon–Fri & Sat, 8:00 AM – 6:00 PM (Sunday: Closed)",
-      licensePlaceholder: "WA Contractor License #—— (add license number)",
+      license: "WA Contractor License #CC BKPRIL*746LH",
       smsHref: "sms:+12537370683?&body=Hi%20BK%20Prime%20Finish%2C%20I%27d%20like%20a%20free%20estimate%20for%20"
     },
     serviceAreas: ["Kent","Renton","Auburn","Bellevue","Seattle","Federal Way","Covington","Maple Valley"]
@@ -896,7 +896,7 @@
       }).join("");
     }
     var lic = document.getElementById("footerLicense");
-    if (lic && CONTENT.business) lic.textContent = CONTENT.business.licensePlaceholder;
+    if (lic && CONTENT.business) lic.textContent = CONTENT.business.license;
 
     var bottom = document.getElementById("footerBottom");
     if (bottom && CONTENT.business){
