@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wedding Invitation Card — Print-Ready Mockup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory: #faf5ec;
+    --ivory-deep: #f3ead9;
+    --blush: #e3a9ad;
+    --blush-deep: #d1898f;
+    --sage: #a7b490;
+    --sage-deep: #8a9974;
+    --gold: #b8892b;
+    --gold-light: #e7cb87;
+    --gold-deep: #8a6216;
+    --ink: #3c3129;
+
+    --navy: #0e1830;
+    --navy-deep: #070c1a;
+    --navy-line: rgba(212,175,109,0.35);
+    --cream: #ece2c8;
+  }
+
+  *{ box-sizing: border-box; }
+
+  input[name="tab"]{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  body{
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: #d9d3c6;
+    font-family: 'Cormorant Garamond', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .intro{
+    max-width: 620px;
+    text-align: center;
+    color: #4a4438;
+  }
+  .intro h1{
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0 0 8px;
+    letter-spacing: 0.02em;
+  }
+  .intro p{ margin: 0; font-size: 17px; line-height: 1.5; }
+
+  /* ---- style switcher (pure CSS, no JS) ---- */
+  .switcher{
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    padding: 6px;
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+  .switcher input{ display:none; }
+  .switcher label{
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #6b6152;
+    transition: all .2s ease;
+  }
+  #tab-ivory:checked ~ .switcher label[for="tab-ivory"],
+  #tab-navy:checked ~ .switcher label[for="tab-navy"]{
+    background: var(--ink);
+    color: #f5efe2;
+  }
+
+  .card-wrap{
+    display: flex;
+    justify-content: center;
+  }
+
+  #card-ivory, #card-navy{ display: none; }
+  #tab-ivory:checked ~ .card-wrap #card-ivory{ display: block; }
+  #tab-navy:checked ~ .card-wrap #card-navy{ display: block; }
+
+  /* ================= shared card shell ================= */
+  .card{
+    position: relative;
+    width: 5in;
+    height: 7in;
+    overflow: hidden;
+    box-shadow: 0 25px 60px -15px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .foil-border{
+    position: absolute;
+    inset: 0.22in;
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 0 1px rgba(184,137,43,0.25);
+    pointer-events: none;
+  }
+  .foil-border::before{
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 0.5px solid var(--gold-light);
+  }
+
+  .content{
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.55in 0.5in;
+  }
+
+  /* ================= IVORY GARDEN ================= */
+  .card.ivory{
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.5), transparent 60%),
+      var(--ivory);
+  }
+  .card.ivory .grain{
+    position: absolute; inset: 0;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+  }
+
+  .card.ivory .eyebrow{
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 22px;
+  }
+  .card.ivory .names{
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 42px;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .card.ivory .amp{
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--gold);
+    margin: 6px 0;
+  }
+  .card.ivory .divider{
+    width: 70px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 26px auto;
+  }
+  .card.ivory .invite-line{
+    font-size: 16px;
+    color: #59503f;
+    line-height: 1.7;
+    max-width: 340px;
+  }
+  .card.ivory .date{
+    margin-top: 22px;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+  .card.ivory .venue{
+    margin-top: 6px;
+    font-size: 15px;
+    font-style: italic;
+    color: #6b6152;
+  }
+  .card.ivory .rsvp{
+    position: absolute;
+    bottom: 0.55in;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9a8f76;
+  }
+
+  .corner{ position: absolute; z-index: 2; }
+  .corner.tl{ top: -6px; left: -6px; }
+  .corner.br{ bottom: -6px; right: -6px; transform: rotate(180deg); }
+  .corner.tr{ top: -6px; right: -6px; transform: scaleX(-1); opacity: 0.85; }
+  .corner.bl{ bottom: -6px; left: -6px; transform: scaleX(-1) rotate(180deg); opacity: 0.85; }
+
+  /* ================= NAVY BAROQUE ================= */
+  .card.navy{
+    background: radial-gradient(ellipse at 50% 20%, #14213f 0%, var(--navy) 55%, var(--navy-deep) 100%);
+  }
+  .navy .foil-border{ border-color: var(--gold-light); }
+  .navy .foil-border::before{ border-color: rgba(231,203,135,0.5); }
+
+  .card.navy .monogram{
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    background: linear-gradient(180deg, #f4e3ad 0%, #cf9f4c 45%, #8a6216 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 1px 0 rgba(255,235,180,0.25));
+    margin-bottom: 18px;
+  }
+  .card.navy .eyebrow{
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+    opacity: 0.85;
+  }
+  .card.navy .names{
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 30px;
+    color: var(--cream);
+    text-shadow:
+      0 1px 0 rgba(255,255,255,0.06),
+      0 2px 3px rgba(0,0,0,0.65);
+    letter-spacing: 0.01em;
+  }
+  .card.navy .divider{
+    width: 90px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    margin: 24px auto;
+  }
+  .card.navy .invite-line{
+    font-size: 15px;
+    color: rgba(236,226,200,0.8);
+    line-height: 1.7;
+    max-width: 320px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+  }
+  .card.navy .date{
+    margin-top: 22px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--gold-light);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  }
+  .card.navy .venue{
+    margin-top: 6px;
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(236,226,200,0.65);
+  }
+  .card.navy .rsvp{
+    position: absolute;
+    bottom: 0.55in;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(231,203,135,0.55);
+  }
+
+  .flourish{ position: absolute; z-index: 2; opacity: 0.9; }
+  .flourish.tl{ top: 10px; left: 10px; }
+  .flourish.br{ bottom: 10px; right: 10px; transform: rotate(180deg); }
+  .flourish.tr{ top: 10px; right: 10px; transform: scaleX(-1); }
+  .flourish.bl{ bottom: 10px; left: 10px; transform: scaleX(-1) rotate(180deg); }
+
+  /* print: exact 5x7in, one card per page */
+  @media print{
+    body{ background: #fff; padding: 0; }
+    .intro, .switcher{ display: none; }
+    .card-wrap{ display: block; }
+    #card-ivory, #card-navy{ display: block !important; page-break-after: always; box-shadow: none; }
+    @page{ size: 5in 7in; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+  <input type="radio" name="tab" id="tab-ivory" checked>
+  <input type="radio" name="tab" id="tab-navy">
+
+  <div class="intro">
+    <h1>Print-Ready Invitation Mockups</h1>
+    <p>Two 5&times;7 vertical card concepts &mdash; select a style below. Placeholder names, date and venue can be swapped for the couple's details.</p>
+  </div>
+
+  <div class="switcher">
+    <label for="tab-ivory">Ivory Garden</label>
+    <label for="tab-navy">Navy Baroque</label>
+  </div>
+
+  <div class="card-wrap">
+
+    <!-- ============ CARD 1 — Ivory Garden ============ -->
+    <div class="card ivory" id="card-ivory">
+      <svg class="grain" width="100%" height="100%">
+        <filter id="paper-noise">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise"/>
+          <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.94  0 0 0 0 0.90  0 0 0 0 0.83  0 0 0 0.05 0"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#paper-noise)"/>
+      </svg>
+
+      <!-- watercolor corner florals -->
+      <svg class="corner tl" width="170" height="170" viewBox="0 0 170 170">
+        <defs>
+          <filter id="wc1" x="-50%" y="-50%" width="200%" height="200%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02 0.04" numOctaves="2" seed="7" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="10"/>
+            <feGaussianBlur stdDeviation="0.6"/>
+          </filter>
+        </defs>
+        <g filter="url(#wc1)">
+          <ellipse cx="40" cy="35" rx="34" ry="26" fill="#d1898f" opacity="0.45" transform="rotate(-18 40 35)"/>
+          <ellipse cx="60" cy="55" rx="22" ry="16" fill="#e3a9ad" opacity="0.55" transform="rotate(12 60 55)"/>
+          <path d="M10,90 C40,60 55,40 20,15 C70,25 80,55 55,80 C45,92 25,100 10,90 Z" fill="#a7b490" opacity="0.5"/>
+          <path d="M25,10 C55,20 70,45 50,70" stroke="#8a9974" stroke-width="2" fill="none" opacity="0.6"/>
+          <circle cx="30" cy="30" r="6" fill="#c97b83" opacity="0.6"/>
+          <circle cx="52" cy="42" r="4" fill="#c97b83" opacity="0.5"/>
+        </g>
+      </svg>
+      <svg class="corner br" width="170" height="170" viewBox="0 0 170 170">
+        <g filter="url(#wc1)">
+          <ellipse cx="40" cy="35" rx="34" ry="26" fill="#d1898f" opacity="0.45" transform="rotate(-18 40 35)"/>
+          <ellipse cx="60" cy="55" rx="22" ry="16" fill="#e3a9ad" opacity="0.55" transform="rotate(12 60 55)"/>
+          <path d="M10,90 C40,60 55,40 20,15 C70,25 80,55 55,80 C45,92 25,100 10,90 Z" fill="#a7b490" opacity="0.5"/>
+          <path d="M25,10 C55,20 70,45 50,70" stroke="#8a9974" stroke-width="2" fill="none" opacity="0.6"/>
+          <circle cx="30" cy="30" r="6" fill="#c97b83" opacity="0.6"/>
+          <circle cx="52" cy="42" r="4" fill="#c97b83" opacity="0.5"/>
+        </g>
+      </svg>
+      <svg class="corner tr" width="110" height="110" viewBox="0 0 170 170">
+        <g filter="url(#wc1)">
+          <ellipse cx="35" cy="30" rx="24" ry="18" fill="#a7b490" opacity="0.45" transform="rotate(20 35 30)"/>
+          <ellipse cx="55" cy="50" rx="16" ry="12" fill="#e3a9ad" opacity="0.5"/>
+          <circle cx="28" cy="26" r="4" fill="#c97b83" opacity="0.55"/>
+        </g>
+      </svg>
+      <svg class="corner bl" width="110" height="110" viewBox="0 0 170 170">
+        <g filter="url(#wc1)">
+          <ellipse cx="35" cy="30" rx="24" ry="18" fill="#a7b490" opacity="0.45" transform="rotate(20 35 30)"/>
+          <ellipse cx="55" cy="50" rx="16" ry="12" fill="#e3a9ad" opacity="0.5"/>
+          <circle cx="28" cy="26" r="4" fill="#c97b83" opacity="0.55"/>
+        </g>
+      </svg>
+
+      <div class="foil-border"></div>
+
+      <div class="content">
+        <div class="eyebrow">Together with their families</div>
+        <div class="names">Amelia<span class="amp">&amp;</span>James</div>
+        <div class="divider"></div>
+        <div class="invite-line">request the pleasure of your company<br>as they exchange vows and celebrate<br>their marriage</div>
+        <div class="date">The Twentieth of June · Two Thousand Twenty&#8209;Six</div>
+        <div class="venue">The Grand Orangery, Ashford Estate</div>
+      </div>
+
+      <div class="rsvp">Reception to follow · RSVP by May 1st</div>
+    </div>
+
+    <!-- ============ CARD 2 — Navy Baroque ============ -->
+    <div class="card navy" id="card-navy">
+      <svg class="flourish tl" width="150" height="150" viewBox="0 0 150 150" fill="none">
+        <g stroke="url(#goldline)" stroke-width="1.4" stroke-linecap="round">
+          <path d="M8,8 C40,4 60,16 55,42 C52,60 34,58 32,44 C31,34 42,30 46,40"/>
+          <path d="M8,8 C4,40 16,60 42,55 C60,52 58,34 44,32 C34,31 30,42 40,46"/>
+          <circle cx="8" cy="8" r="3" fill="#e7cb87" stroke="none"/>
+        </g>
+        <defs>
+          <linearGradient id="goldline" x1="0" y1="0" x2="150" y2="150">
+            <stop offset="0" stop-color="#f4e3ad"/>
+            <stop offset="1" stop-color="#8a6216"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <svg class="flourish br" width="150" height="150" viewBox="0 0 150 150" fill="none">
+        <g stroke="#cf9f4c" stroke-width="1.4" stroke-linecap="round">
+          <path d="M8,8 C40,4 60,16 55,42 C52,60 34,58 32,44 C31,34 42,30 46,40"/>
+          <path d="M8,8 C4,40 16,60 42,55 C60,52 58,34 44,32 C34,31 30,42 40,46"/>
+          <circle cx="8" cy="8" r="3" fill="#e7cb87" stroke="none"/>
+        </g>
+      </svg>
+      <svg class="flourish tr" width="95" height="95" viewBox="0 0 150 150" fill="none">
+        <g stroke="#cf9f4c" stroke-width="1.2" stroke-linecap="round" opacity="0.8">
+          <path d="M8,8 C40,4 60,16 55,42 C52,60 34,58 32,44"/>
+          <circle cx="8" cy="8" r="2.4" fill="#e7cb87" stroke="none"/>
+        </g>
+      </svg>
+      <svg class="flourish bl" width="95" height="95" viewBox="0 0 150 150" fill="none">
+        <g stroke="#cf9f4c" stroke-width="1.2" stroke-linecap="round" opacity="0.8">
+          <path d="M8,8 C40,4 60,16 55,42 C52,60 34,58 32,44"/>
+          <circle cx="8" cy="8" r="2.4" fill="#e7cb87" stroke="none"/>
+        </g>
+      </svg>
+
+      <div class="foil-border"></div>
+
+      <div class="content">
+        <div class="monogram">A&thinsp;&middot;&thinsp;J</div>
+        <div class="eyebrow">Request the honour of your presence</div>
+        <div class="names">Amelia Rose &amp; James Alexander</div>
+        <div class="divider"></div>
+        <div class="invite-line">on the occasion of their marriage<br>a celebration of love, elegantly held<br>beneath the evening sky</div>
+        <div class="date">Saturday, the Twentieth of June 2026</div>
+        <div class="venue">The Grand Orangery, Ashford Estate</div>
+      </div>
+
+      <div class="rsvp">Black Tie Optional · RSVP by May 1st</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
