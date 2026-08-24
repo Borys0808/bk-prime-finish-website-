@@ -1,0 +1,13 @@
+{
+  "name": "bk-prime-finish-website",
+  "private": true,
+  "description": "Dev-only dependencies for the Impeccable design-quality skill (.claude/skills/impeccable). Not required to view or deploy the site — index.html is fully self-contained.",
+  "devDependencies": {
+    "htmlparser2": "^12.0.0",
+    "css-select": "^7.0.0",
+    "css-tree": "^3.2.1",
+    "domutils": "^4.0.2",
+    "fflate": "^0.8.3",
+    "marked": "^18.0.5"
+  }
+}
