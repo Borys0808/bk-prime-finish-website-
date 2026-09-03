@@ -10,7 +10,10 @@
 <meta property="og:title" content="BK Prime Finish LLC | Residential Painting in King County, WA">
 <meta property="og:description" content="Licensed & insured residential painters serving King County, WA. Free estimates, free color consultation. Interior, exterior, decks, cabinets & pressure washing.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80">
+<meta property="og:image" content="https://bkprimefinish.com/images/exterior-after.jpg">
+<meta property="og:url" content="https://bkprimefinish.com/">
+<link rel="canonical" href="https://bkprimefinish.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0c0f'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Helvetica,Arial,sans-serif' font-weight='700' font-size='30' fill='%23c9a227'%3EBK%3C/text%3E%3C/svg%3E">
 <meta property="og:locale" content="en_US">
 
 <!-- LocalBusiness / PaintingContractor JSON-LD -->
@@ -19,16 +22,15 @@
   "@context": "https://schema.org",
   "@type": "PaintingContractor",
   "name": "BK Prime Finish LLC",
-  "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80",
+  "image": "https://bkprimefinish.com/images/exterior-after.jpg",
+  "url": "https://bkprimefinish.com/",
   "telephone": "+12537370683",
   "email": "bkprimefinish@gmail.com",
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "12628 SE 211th St",
     "addressLocality": "Kent",
     "addressRegion": "WA",
-    "postalCode": "98031",
     "addressCountry": "US"
   },
   "areaServed": [
@@ -52,7 +54,7 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Friday","Saturday"],
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
       "opens": "08:00",
       "closes": "18:00"
     }
@@ -68,13 +70,13 @@
 <style>
   /* ============================= RESET & BASE ============================= */
   :root{
-    --navy: #0f2540;
-    --navy-dark: #0a1a2e;
-    --navy-light: #1c3a5e;
-    --accent: #b95619;
-    --accent-dark: #a8551f;
-    --accent-light: #f0a868;
-    --cream: #faf7f2;
+    --navy: #15171b;
+    --navy-dark: #0b0c0f;
+    --navy-light: #24272e;
+    --accent: #c9a227;
+    --accent-dark: #8a6a20;
+    --accent-light: #e8c86a;
+    --cream: #faf8f3;
     --white: #ffffff;
     --gray-50: #f7f8fa;
     --gray-100: #eef1f5;
@@ -146,8 +148,8 @@
     white-space:nowrap;
   }
   .btn:active{ transform: scale(.97); }
-  .btn-primary{ background: var(--accent); color:#fff; box-shadow: var(--shadow-sm); }
-  .btn-primary:hover{ background: var(--accent-dark); box-shadow: var(--shadow-md); }
+  .btn-primary{ background: var(--accent); color: var(--navy-dark); box-shadow: var(--shadow-sm); }
+  .btn-primary:hover{ background: var(--accent-dark); color:#fff; box-shadow: var(--shadow-md); }
   .btn-outline{ background: rgba(255,255,255,0.08); color:#fff; border-color: rgba(255,255,255,0.65); }
   .btn-outline:hover{ background: rgba(255,255,255,0.18); }
   .btn-navy{ background: var(--navy); color:#fff; }
@@ -382,7 +384,7 @@
     transition: border-color .15s ease, box-shadow .15s ease;
   }
   .form-row input:focus, .form-row select:focus, .form-row textarea:focus{
-    outline:none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(185,86,25,0.18);
+    outline:none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(201,162,39,0.25);
   }
   .form-row textarea{ resize: vertical; min-height:110px; }
   .field-error{ color:#c0392b; font-size:var(--text-xs); margin-top:5px; display:none; }
@@ -391,7 +393,7 @@
 
   .reply-note{
     display:flex; align-items:center; gap:8px; font-size:var(--text-xs); font-weight:700; color: var(--accent-dark);
-    background: rgba(185,86,25,0.1); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 20px;
+    background: rgba(201,162,39,0.14); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 20px;
   }
   .reply-note svg{ width:18px; height:18px; flex-shrink:0; }
 
@@ -446,7 +448,7 @@
     text-decoration:none; font-weight:700; font-size:var(--text-sm); padding: 12px 10px; border-radius: 999px;
   }
   .mobile-fab-bar a svg{ width:18px; height:18px; }
-  .mobile-fab-bar .fab-call{ background: var(--accent); color:#fff; }
+  .mobile-fab-bar .fab-call{ background: var(--accent); color: var(--navy-dark); }
   .mobile-fab-bar .fab-text{ background: rgba(255,255,255,0.12); color:#fff; border: 1.5px solid rgba(255,255,255,0.3); }
   @media (max-width: 780px){
     .mobile-fab-bar{ display:flex; }
@@ -476,9 +478,8 @@
       phoneDisplay: "(253) 737-0683",
       phoneHref: "+12537370683",
       email: "bkprimefinish@gmail.com",
-      address: "12628 SE 211th St, Kent, WA 98031",
-      hours: "Mon–Fri & Sat, 8:00 AM – 6:00 PM (Sunday: Closed)",
-      license: "WA Contractor License #CC BKPRIL*746LH",
+      hours: "Mon–Sat, 8:00 AM – 6:00 PM (Sunday: Closed)",
+      license: "WA LIC # BKPRIL*746LH",
       smsHref: "sms:+12537370683?&body=Hi%20BK%20Prime%20Finish%2C%20I%27d%20like%20a%20free%20estimate%20for%20"
     },
     serviceAreas: ["Kent","Renton","Auburn","Bellevue","Seattle","Federal Way","Covington","Maple Valley","Kirkland","Redmond","Sammamish","Issaquah","Shoreline","Burien","Bothell","Black Diamond"]
@@ -497,7 +498,6 @@
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
       <a href="#how-it-works">How It Works</a>
-      <a href="#testimonials">Reviews</a>
       <a href="#service-area">Service Area</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -520,7 +520,6 @@
     <a href="#services">Services</a>
     <a href="#gallery">Gallery</a>
     <a href="#how-it-works">How It Works</a>
-    <a href="#testimonials">Reviews</a>
     <a href="#service-area">Service Area</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -618,47 +617,14 @@
         <p>Drag the slider or use your arrow keys to compare our work.</p>
       </div>
 
-      <div class="fade-in" role="tablist" aria-label="Before and after examples" class="ba-tabs">
-        <div class="ba-tabs" role="tablist" aria-label="Before and after examples">
-          <button class="ba-tab" role="tab" id="tab-exterior" aria-selected="true" aria-controls="panel-exterior" data-target="exterior">Exterior</button>
-          <button class="ba-tab" role="tab" id="tab-deck" aria-selected="false" aria-controls="panel-deck" data-target="deck" tabindex="-1">Deck</button>
-          <button class="ba-tab" role="tab" id="tab-cabinets" aria-selected="false" aria-controls="panel-cabinets" data-target="cabinets" tabindex="-1">Kitchen Cabinets</button>
-        </div>
-      </div>
-
       <div class="ba-wrap fade-in">
-        <!-- Exterior -->
-        <div id="panel-exterior" role="tabpanel" aria-labelledby="tab-exterior" data-panel="exterior">
-          <div class="compare" data-compare
-               data-before="images/exterior-before.jpg"
-               data-after="images/exterior-after.jpg"
-               data-before-alt="House exterior before painting, unfinished tan siding and bare trim"
-               data-after-alt="Same house exterior after painting, light gray siding with dark trim">
-          </div>
-          <p class="ba-caption">Exterior repaint — Kent, WA</p>
+        <div class="compare" data-compare
+             data-before="images/exterior-before.jpg"
+             data-after="images/exterior-after.jpg"
+             data-before-alt="House exterior before painting, unfinished tan siding and bare trim"
+             data-after-alt="Same house exterior after painting, light gray siding with dark trim">
         </div>
-
-        <!-- Deck -->
-        <div id="panel-deck" role="tabpanel" aria-labelledby="tab-deck" data-panel="deck" hidden>
-          <div class="compare" data-compare
-               data-before="https://images.unsplash.com/photo-1591825381992-4bef4b1b3f21?auto=format&fit=crop&w=1000&q=70"
-               data-after="https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1000&q=70"
-               data-before-alt="Weathered wood deck before staining"
-               data-after-alt="Deck after staining and sealing, rich even color">
-          </div>
-          <p class="ba-caption">Deck staining &amp; sealing — Renton, WA</p>
-        </div>
-
-        <!-- Cabinets -->
-        <div id="panel-cabinets" role="tabpanel" aria-labelledby="tab-cabinets" data-panel="cabinets" hidden>
-          <div class="compare" data-compare
-               data-before="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=1000&q=70"
-               data-after="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=1000&q=70"
-               data-before-alt="Dated kitchen cabinets before painting"
-               data-after-alt="Kitchen cabinets after professional repaint, bright and modern">
-          </div>
-          <p class="ba-caption">Cabinet repaint — Bellevue, WA</p>
-        </div>
+        <p class="ba-caption">Exterior repaint — Kent, WA</p>
       </div>
     </div>
   </section>
@@ -692,45 +658,7 @@
     </div>
   </section>
 
-  <!-- ============================= TESTIMONIALS ============================= -->
-  <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
-    <div class="container">
-      <div class="section-head fade-in">
-        <p class="eyebrow">What Neighbors Say</p>
-        <h2 id="testimonials-heading">Testimonials</h2>
-        <p>A few words from homeowners we've worked with.</p>
-      </div>
 
-      <div class="testi-grid">
-        <blockquote class="testi-card fade-in">
-          <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="quote">"They showed up on time, protected our landscaping, and the exterior looks brand new. Couldn't be happier."</p>
-          <footer class="testi-author">
-            <div class="testi-avatar" aria-hidden="true">J</div>
-            <div><strong>Jamie R.</strong><span>Kent, WA</span></div>
-          </footer>
-        </blockquote>
-
-        <blockquote class="testi-card fade-in">
-          <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="quote">"Our kitchen cabinets look like we bought all new ones. Great communication the whole way through."</p>
-          <footer class="testi-author">
-            <div class="testi-avatar" aria-hidden="true">M</div>
-            <div><strong>Maria S.</strong><span>Renton, WA</span></div>
-          </footer>
-        </blockquote>
-
-        <blockquote class="testi-card fade-in">
-          <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="quote">"Fair price, clean work, and they finished ahead of schedule. Already booked them for next spring."</p>
-          <footer class="testi-author">
-            <div class="testi-avatar" aria-hidden="true">D</div>
-            <div><strong>David K.</strong><span>Auburn, WA</span></div>
-          </footer>
-        </blockquote>
-      </div>
-    </div>
-  </section>
 
   <!-- ============================= SERVICE AREA ============================= -->
   <section id="service-area" aria-labelledby="area-heading">
@@ -813,7 +741,7 @@
             <h3>Contact Details</h3>
             <div class="info-row">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>12628 SE 211th St<br>Kent, WA 98031</span>
+              <span>Serving King County, WA — we come to you</span>
             </div>
             <div class="info-row">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -862,7 +790,7 @@
       <div>
         <h4>Contact</h4>
         <ul class="footer-info-list">
-          <li>12628 SE 211th St<br>Kent, WA 98031</li>
+          <li>Serving King County, WA</li>
           <li><a href="tel:+12537370683">(253) 737-0683</a></li>
           <li><a href="mailto:bkprimefinish@gmail.com">bkprimefinish@gmail.com</a></li>
         </ul>
@@ -872,7 +800,6 @@
         <ul class="footer-info-list">
           <li><a href="#services">Services</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
           <li><a href="#contact">Free Estimate</a></li>
         </ul>
       </div>
